@@ -2,13 +2,15 @@
   "name": "My Budget",
   "short_name": "Budget",
   "description": "Personal budget tracker",
-  "start_url": "/",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#05070f",
   "theme_color": "#38e1ff",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

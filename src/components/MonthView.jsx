@@ -199,8 +199,8 @@ export default function MonthView() {
             <button className="btn btn-sm" onClick={handleCopyPrev}>
               Copy from {monthLabel(prevMonth(month))}
             </button>
-            <button className="btn btn-sm" onClick={() => setSheet({ initial: null, defaultSection: 'One-offs' })}>
-              + Add section
+            <button className="btn btn-primary btn-sm" onClick={() => setSheet({ initial: null, defaultSection: 'One-offs' })}>
+              + Add item
             </button>
           </div>
 
