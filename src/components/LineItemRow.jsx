@@ -26,42 +26,46 @@ export default function LineItemRow({ item, onChangeAmount, onTogglePaid, onEdit
 
   return (
     <div className={`item ${stateClass}`}>
-      <div className="item-main">
-        <div className="item-label">{item.label}</div>
-        <div className="item-sub">
-          <span className="tag">{item.method}</span>
-          {item.item_date && <span>{item.item_date}</span>}
-          {item.notes && <span title={item.notes}>📝</span>}
+      <div className="item-body">
+        <div className="item-main">
+          <div className="item-label">{item.label}</div>
+          <div className="item-sub">
+            <span className="tag">{item.method}</span>
+            {item.item_date && <span>{item.item_date}</span>}
+            {item.notes && <span title={item.notes}>📝</span>}
+          </div>
         </div>
+
+        <input
+          className="amount-input"
+          value={amt}
+          inputMode="decimal"
+          onChange={(e) => {
+            dirty.current = true
+            setAmt(e.target.value)
+          }}
+          onBlur={commitAmount}
+          onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.blur()}
+          aria-label={`${item.label} amount`}
+        />
       </div>
 
-      <input
-        className="amount-input"
-        value={amt}
-        inputMode="decimal"
-        onChange={(e) => {
-          dirty.current = true
-          setAmt(e.target.value)
-        }}
-        onBlur={commitAmount}
-        onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.blur()}
-        aria-label={`${item.label} amount`}
-      />
+      <div className="item-actions">
+        <button
+          className={`toggle ${item.paid ? 'on' : ''}`}
+          onClick={() => onTogglePaid(item)}
+          title={`${toggleLabel}?`}
+        >
+          {item.paid ? `${toggleLabel} ✓` : toggleLabel + '?'}
+        </button>
 
-      <button
-        className={`toggle ${item.paid ? 'on' : ''}`}
-        onClick={() => onTogglePaid(item)}
-        title={`${toggleLabel}?`}
-      >
-        {item.paid ? `${toggleLabel} ✓` : toggleLabel + '?'}
-      </button>
-
-      <button className="icon-btn" onClick={() => onEdit(item)} title="Edit">
-        ✏️
-      </button>
-      <button className="icon-btn" onClick={() => onDelete(item)} title="Delete">
-        🗑️
-      </button>
+        <button className="icon-btn" onClick={() => onEdit(item)} title="Edit">
+          ✏️
+        </button>
+        <button className="icon-btn" onClick={() => onDelete(item)} title="Delete">
+          🗑️
+        </button>
+      </div>
     </div>
   )
 }

@@ -4,8 +4,8 @@
   "description": "Personal budget tracker",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f1216",
-  "theme_color": "#2f6f6a",
+  "background_color": "#05070f",
+  "theme_color": "#38e1ff",
   "icons": [
     {
       "src": "/icon.svg",
