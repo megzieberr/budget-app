@@ -161,6 +161,7 @@ create or replace function public.seed_defaults()
 returns void
 language plpgsql
 security invoker
+set search_path = public, pg_temp
 as $$
 declare
   v_micro uuid;
@@ -218,6 +219,7 @@ create or replace function public.initialise_month(p_month text)
 returns void
 language plpgsql
 security invoker
+set search_path = public, pg_temp
 as $$
 declare
   v_prev       text;
