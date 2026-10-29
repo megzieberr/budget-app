@@ -1,3 +1,9 @@
+# RETIRED 29 Oct 2026 (her call)
+
+GitHub Pages OFF, repo ARCHIVED, Supabase project `budget-tracker (budget-plottwist account)` PAUSED 29 Oct 2026 (restorable for about 90 days, then gone; nothing in it worth saving, her call). Local folder moved to `Desktop\Claude Code Projects\_archive\`. The skeleton = this repo + `supabase/`. Do not wake it unless Megan un-retires it.
+
+---
+
 # My Budget
 
 A personal budget tracker. React + Vite frontend, Supabase (Postgres + Auth) backend,
